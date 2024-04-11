@@ -339,7 +339,9 @@ label{
   line-height: 1.5;
 }
 
-
+input::placeholder, textarea::placeholder {
+  color: #198199;
+}
 
 
 .fullname, .email {
@@ -426,7 +428,9 @@ label{
   }
 	
 	
-	
+	.box-area{
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
 	
 	
 	
@@ -589,3 +593,34 @@ label{
 	}
 }
 
+
+.carousel {
+  max-width: 500px; 
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); } 
+  33.33% { transform: translateX(0); }
+  33.34% { transform: translateX(-100%); }
+  66.67% { transform: translateX(-100%); } 
+  66.68% { transform: translateX(-200%); } 
+  100% { transform: translateX(-200%); }
+}
+
+.carousel-inner {
+  animation: slide 10s infinite;
+}
